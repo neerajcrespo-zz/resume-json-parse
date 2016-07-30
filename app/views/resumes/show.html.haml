@@ -1,0 +1,26 @@
+%br
+-json_array = JSON.parse(@resume.content)
+= link_to "Home", root_path, class: ("logo-body")
+%h1.center Resume
+%hr
+-json_array.each do |key,value| #top level like basics, education
+  %h2.center #{key}
+  -if value.respond_to?('each') #should be key value like name: neeraj or key => array
+    -csv1 = ""
+    -value.each do |skey, sval|
+      -csv2 = ""
+      -if sval.respond_to?('each')
+        -sval.each do |atomic_value|
+          -csv2 += "#{atomic_value.to_s}, "
+        %h3 #{skey}: #{csv2}
+      -else
+        %h3 #{skey}: #{sval}
+    %h3 #{key} : #{csv1}
+  -else
+    %h3 #{key} : #{value}
+  %hr
+
+
+
+
+

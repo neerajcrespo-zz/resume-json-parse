@@ -1,3 +1,4 @@
+
 class ResumesController < ApplicationController
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +11,7 @@ class ResumesController < ApplicationController
   # GET /resumes/1
   # GET /resumes/1.json
   def show
+
   end
 
   # GET /resumes/new
@@ -24,6 +26,7 @@ class ResumesController < ApplicationController
   # POST /resumes
   # POST /resumes.json
   def create
+    binding.pry
     @resume = Resume.new(resume_params)
 
     respond_to do |format|
@@ -69,6 +72,6 @@ class ResumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resume_params
-      params.fetch(:resume, {})
+      params.permit(:content)
     end
 end

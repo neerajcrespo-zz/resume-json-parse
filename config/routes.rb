@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :resumes
+  resources :resumes, only: [:create, :show]
   root 'home#show'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -39,8 +39,8 @@ legend{border:0;padding:0}
 pre,textarea{overflow:auto}
 optgroup{font-weight:bold}
 /* End extract from normalize.css */
-html,body{font-family: 'Roboto', sans-serif;font-size:15px;line-height:1.5; font-weight: 100}
-h1,h2,h3,h4,h5,h6{font-weight: 100;font-family: 'Roboto', sans-serif;margin:0;letter-spacing: 0px;}
+html,body{font-family: 'Roboto', sans-serif;font-size:15px;line-height:1.5; font-weight: 100; color: white;}
+h1,h2,h3,h4,h5,h6{font-weight: 100;font-family: 'Roboto', sans-serif;margin:0;letter-spacing: 0px; color:white;}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
 h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
 hr{height:0;border:0;border-top:1px solid #eee;margin:20px 0}
@@ -116,22 +116,7 @@ a{color:inherit}
 .mobile-break {display: none;}
 
 
-.container{margin:0 auto;}
 
-    @font-face {
-        font-family: 'Circular-Bold';
-        src: url(../fonts/lineto-circular-black.woff);
-    }
-        
-    @font-face {
-        font-family: 'Circular-Book';
-        src: url(../fonts/lineto-circular-book.woff);
-    }
-
-    @font-face {
-        font-family: 'Lato', sans-serif;
-        src: url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700);
-    }
 
 .overlay {
     display: block;

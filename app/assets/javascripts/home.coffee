@@ -3,11 +3,26 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 onReaderLoad = (event) ->
-    console.log "eventiffyf"
-    console.log event.target.result
+  console.log "eventiffyf"
+
+  try
     obj = JSON.parse(event.target.result)
-    console.log obj
-    return
+  catch err
+    console.log "problem with parsing json"
+    alert "Not a JSON file?"
+
+  formdata =  {'content' : JSON.stringify(obj)}
+  console.log formdata
+  
+  $.post "/resumes", formdata, ((data, status) ->
+        location.href = '/resumes/'+data.id
+        return
+      ), 'json'
+      .fail((data)->
+        console.log "failed error"
+        alert "Failed to create resource, I am fixing this shortly."
+      )
+  return
 
 $('document').ready ->
 
@@ -20,5 +35,5 @@ $('document').ready ->
     readFile.onload = onReaderLoad
     readFile.readAsText event.target.files[0]
   
+    return
   return
-return
