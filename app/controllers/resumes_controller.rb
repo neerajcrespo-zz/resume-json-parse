@@ -11,7 +11,7 @@ class ResumesController < ApplicationController
   # GET /resumes/1
   # GET /resumes/1.json
   def show
-
+  
   end
 
   # GET /resumes/new
@@ -26,7 +26,6 @@ class ResumesController < ApplicationController
   # POST /resumes
   # POST /resumes.json
   def create
-    binding.pry
     @resume = Resume.new(resume_params)
 
     respond_to do |format|
